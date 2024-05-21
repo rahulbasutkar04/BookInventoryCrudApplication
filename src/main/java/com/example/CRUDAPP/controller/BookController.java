@@ -19,7 +19,6 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-
     @PostMapping("/book")
 
     public ResponseEntity<?> addBook(@RequestBody Book book) {
