@@ -6,6 +6,8 @@ services:
     ports:
       - 27017:27017
     restart: always
+    networks:
+      - crudapp-network
 
   books-api:
     image: books-api:v1
@@ -14,4 +16,10 @@ services:
     restart: always
     depends_on:
       - mongodb
+    networks:
+      - crudapp-network
 
+networks:
+  crudapp-network:
+    external:
+      name: crudapp_default
